@@ -24,8 +24,8 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="8Vp-C8-6TJ"/>
                                     <constraint firstAttribute="height" constant="68" id="QYM-sg-LhR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="36"/>
-                                <color key="textColor" red="0.92891609668731689" green="0.21953278779983521" blue="0.19875350594520569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -40,6 +40,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="gPf-OO-kLG">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewContriller" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="9cR-jv-4gj" customClass="PageViewController" customModule="UIPageView" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTi-er-6Qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="139"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="C22-9U-9RY">
+            <objects>
+                <viewController storyboardIdentifier="ContentviewController" id="lAx-1o-7ZG" customClass="ContentViewController" customModule="UIPageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lsv-9b-be4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Много, много текста" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cb-Bj-AVH">
+                                <rect key="frame" x="16" y="102" width="343" height="82"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqv-7f-G8H">
+                                <rect key="frame" x="133.5" y="283.5" width="108" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="0iw-Lz-nCi">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.92891609668731689" green="0.21953278779983521" blue="0.19875350594520569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23860162500000001" green="0.92469769719999995" blue="0.99989837410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Oqv-7f-G8H" firstAttribute="centerX" secondItem="2yH-bN-bbT" secondAttribute="centerX" id="ImN-R6-Sfl"/>
+                            <constraint firstItem="2yH-bN-bbT" firstAttribute="bottom" secondItem="0iw-Lz-nCi" secondAttribute="bottom" constant="20" id="Kam-ZK-5q1"/>
+                            <constraint firstItem="1cb-Bj-AVH" firstAttribute="leading" secondItem="2yH-bN-bbT" secondAttribute="leading" constant="16" id="MgU-YV-5jS"/>
+                            <constraint firstItem="2yH-bN-bbT" firstAttribute="trailing" secondItem="1cb-Bj-AVH" secondAttribute="trailing" constant="16" id="W9Q-YF-iHr"/>
+                            <constraint firstItem="0iw-Lz-nCi" firstAttribute="centerX" secondItem="2yH-bN-bbT" secondAttribute="centerX" id="btE-MU-ZOK"/>
+                            <constraint firstItem="1cb-Bj-AVH" firstAttribute="top" secondItem="2yH-bN-bbT" secondAttribute="top" constant="82" id="dq8-I0-hIn"/>
+                            <constraint firstItem="Oqv-7f-G8H" firstAttribute="centerY" secondItem="2yH-bN-bbT" secondAttribute="centerY" id="lOJ-k3-lkj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2yH-bN-bbT"/>
+                    </view>
+                    <connections>
+                        <outlet property="emojiLabel" destination="Oqv-7f-G8H" id="bc9-Fn-2wp"/>
+                        <outlet property="pageControl" destination="0iw-Lz-nCi" id="fVO-S3-JeU"/>
+                        <outlet property="presentTextLabel" destination="1cb-Bj-AVH" id="LIP-S8-V6A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ece-9k-1VS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
